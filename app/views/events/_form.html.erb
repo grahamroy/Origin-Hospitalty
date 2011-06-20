@@ -1,0 +1,47 @@
+Please complete
+
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+    
+    <p>
+      <%= f.label "Event Name" %>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label "Start Date" %>
+      <%= f.text_field :start_date %>
+    </p>
+
+    <p>
+      <%= f.label "End Date" %>
+      <%= f.text_field :end_date %>
+    </p>
+
+    <p>
+      <%= f.label "Category" %>
+      <%= f.text_field :category %>
+    </p>
+
+    <p>
+      <%= f.label "Location" %>
+      <%= f.text_field :location %>
+    </p>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
