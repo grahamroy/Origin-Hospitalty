@@ -23,6 +23,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :production do
+  gem 'therubyracer'
+end
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
